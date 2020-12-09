@@ -1,0 +1,30 @@
+name: addressbook
+
+# The runtime the application uses.
+type: "python:3.8"
+
+# The build-time dependencies of the app.
+dependencies:
+    python3:
+       pipenv: "2018.10.13"
+relationships:
+    database: "db:sqlite3"
+
+    upstream:
+        socket_family: tcp
+        protocol: http
+
+    commands:
+        # If you change the build output in the build hook above, update this line as well.
+        start: ./bin/run
+
+    locations:
+        /:
+            # Route all requests to the Go app, unconditionally.
+            # If you want some files served directly by the web server without hitting Go, see
+            # https://docs.platform.sh/configuration/app/web.html
+            allow: false
+            passthru: true
+
+# The size of the persistent disk of the application (in MB).
+disk: 1024
