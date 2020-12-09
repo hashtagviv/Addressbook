@@ -1,0 +1,10 @@
+#!/bin/bash
+
+file=addressbook/var/addressbook.sqlite3
+if [ ! -e "$file" ]; then
+	./bin/db reset
+fi
+export FLASK_DEBUG=True
+export FLASK_APP=addressbook
+export ADDRESSBOOK_SETTINGS=config.py
+flask run --host 0.0.0.0 --port 8000

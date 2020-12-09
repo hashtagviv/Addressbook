@@ -1,7 +1,7 @@
 <<<<<<< HEAD
 env/*
-insta485/html
-insta485/html/*
+addressbook/html
+addressbook/html/*
 */__pycache__
 *.orig
 cookies.txt
@@ -17,30 +17,12 @@ cookies.txt
 submit.tar.gz
 starter_files.tar.gz
 
-# EECS 485 Project 1
-*.log
-*insta485/html/
-*hello/html/
-*hello_css/html/
-
-# EECS 485 Project 2
-*.db
 var/
 
 
-# EECS 485 Project 3
+# react/js
 node_modules/
-cookies.txt
 bundle.js
-
-# EECS 485 Project 4
-*output/
-*output_1/
-*output_2/
-*/debug/*
-
-# EECS 485 Project 5
-index/hadoop/input
 
 # Python
 *.pyc
@@ -55,7 +37,6 @@ venv3/
 # JavaScript
 bundle.js
 node_modules/
-files_for_autograder_io/
 */var/*
 
 # Virtual Machines
@@ -89,7 +70,7 @@ starter_files.tar.gz
 
 # EECS 485 Project 1
 *.log
-*insta485/html/
+*addressbook/html/
 *hello/html/
 *hello_css/html/
 
@@ -145,3 +126,5 @@ files_for_autograder_io/
 Icon
 .dropbox*
 
+starter_files
+activate

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/css/jquery.dataTables_themeroller.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <title> Add Contact</title>
+    </head>
+    <body>
+        <nav class="navbar sticky-top navbar-dark bg-primary">
+            <a class="navbar-brand title" href="/">Address Book</a>
+            <img src="/static/images/logo.png" class="center">
+        </nav>
+        <div class="figure"> </div>
+        <form action="" method="post" enctype="multipart/form-data">
+            
+            
+            <div className="generalinfo">
+            <div class="form-group form-group container p-3 my-3 bg-info bg-hover text-white">
+                <label class="font-weight-bold">First Name:</label>
+                <input type="text" name="firstname" class="form-control2 adjustwidth"/>
+                <label class="font-weight-bold">Last Name: </label>
+                <input type="text" name="lastname" class="form-control2 adjustwidth"/>
+                <label class="font-weight-bold">Company:</label>
+                <input type="text" name="company" class="form-control2 adjustwidth"/>
+                <label class="font-weight-bold"> Email:</label>
+                <input type="text" name="email" class="form-control2 adjustwidth"/>
+                <label class="font-weight-bold"> Category: </label>
+                <input type="text" name="category" class="form-control2 adjustwidth"/>
+            </div>
+            <!-- <div class="form-group">
+                
+            </div> -->
+            
+            
+            </div>
+            
+            <div class="form-group form-group container p-3 my-3 bg-info bg-hover text-white">
+                <h2> Address Info </h2>
+                <label class="font-weight-bold">Address: </label>
+                <input type="text" name="address"/>
+                <label class="font-weight-bold">City:</label>
+                <input type="text" name="city"/>
+                <label class="font-weight-bold">Country:</label>
+                <input type="text" name="country"/>
+                <label class="font-weight-bold">State:</label>
+                <input type="text" name="state"/>
+                <label class="font-weight-bold">ZIP:</label>
+                <input type="text" name="zip"/>
+            </div>
+            
+            <div class="form-group form-group container p-3 my-3 bg-info bg-hover text-white">
+                <h2> Contact Info </h2>
+            <label class="font-weight-bold">Work Phone:</label>
+            <input type="text" name="workphone"/>
+            <label class="font-weight-bold">Home Phone:</label>
+            <input type="text" name="homephone"/>
+            <label class="font-weight-bold">Mobile:</label>
+            <input type="text" name="mobile"/>
+            <label class="font-weight-bold">URL:</label>
+            <input type="text" name="url"/>
+            </div>
+            <div class="figure"></div>
+            <input type="submit" name="addnew" value="Add Contact" class="btn btn-dark buttonmargin1"/>
+        </form>
+    </body>
+</html>
