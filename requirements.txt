@@ -37,5 +37,7 @@ soupsieve==2.0.1
 toml==0.10.1
 typed-ast==1.4.1
 urllib3==1.25.10
+importlib-metadata==1.9.0
+virtualenv==20.0.30
 wrapt==1.12.1
 gunicorn==0.17.0
