@@ -43,7 +43,7 @@ class Index extends React.Component {
       history.replaceState(this.state, {});
       return (
         <div>
-            <table id="myTable" class="table table-bordered table-hover">
+            <table id="myTable" class="table table-bordered table-hover table-striped">
                 <thead class="thead-dark">
                     <tr class="font-weight-bolder text-monospace">
                         <th>First Name </th>
