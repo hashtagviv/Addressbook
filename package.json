@@ -4,6 +4,9 @@
   "main": "addressbook/js/main.jsx",
   "author": "Vivek Pisharodi",
   "repository": {},
+  "scripts" :{
+    "postinstall": "npx webpack"
+  },
   "devDependencies": {
     "babel-core": "==6.26.0",
     "babel-eslint": "==8.0.1",
