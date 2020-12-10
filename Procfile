@@ -1,1 +1,2 @@
-web: gunicorn -w 2 addressbook:app --log-level debug --error-logfile debug.txt
+web: gunicorn -w 2 addressbook:app
+app: npx webpack
