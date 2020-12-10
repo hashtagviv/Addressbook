@@ -1,1 +1,1 @@
-web: gunicorn addressbook:app
+web: gunicorn -w 2 addressbook:app --log-level debug

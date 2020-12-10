@@ -17,8 +17,6 @@ cookies.txt
 submit.tar.gz
 starter_files.tar.gz
 
-var/
-
 
 # react/js
 node_modules/
@@ -76,7 +74,6 @@ starter_files.tar.gz
 
 # EECS 485 Project 2
 *.db
-var/
 
 # EECS 485 Project 3
 node_modules/
