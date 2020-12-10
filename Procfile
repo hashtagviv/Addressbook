@@ -1,1 +1,1 @@
-web: gunicorn -w 2 addressbook:app --log-level debug
+web: gunicorn -w 2 addressbook:app --log-level debug --error-logfile debug.txt
