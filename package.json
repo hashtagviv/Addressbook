@@ -1,6 +1,5 @@
 {
   "name": "addressbook",
-  "version": "0.1.0",
   "description": "addressbook front end",
   "main": "addressbook/js/main.jsx",
   "author": "Vivek Pisharodi",

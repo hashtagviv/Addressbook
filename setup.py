@@ -3,7 +3,6 @@ from setuptools import setup
 
 setup(
     name='addressbook',
-    version='0.1.0',
     packages=['addressbook'],
     include_package_data=True,
     install_requires=[
