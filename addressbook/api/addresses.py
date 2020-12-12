@@ -2,19 +2,28 @@ import addressbook
 from addressbook.model import get_db
 import flask
 
-@addressbook.app.route('/api/v1/add', methods=["GET"])
+@addressbook.app.route('/api/v1/add/', methods=["GET", "POST"])
 def get_addresses():
-    """get all addressses address id"""
+    """get {size} addressses address id"""
     connection = get_db()
-    cur = connection.execute("Select addressid from Addresses")
+    size = flask.request.args.get("size", default=50000, type=int)
+    page = flask.request.args.get("page", default=0, type=int)
+    cur = connection.execute("Select addressid, firstname,lastname,Category, Company,Email from Addresses limit ? offset ?",(size, page*size))
     results = cur.fetchall()
     context = {}
-    for address in results:
-        address["url"] = "/api/v1/add/" + str(address["addressid"])
-    context["results"] = results
+    # for address in results:
+    #     address["url"] = "/api/v1/add/" + str(address["addressid"])
+    context["data"] = results
+    # context["url"] = flask.request.path
+    next_page = page + 1
     cur = connection.execute("Select Count(*) from Addresses")
     results = cur.fetchone()["Count(*)"]
-    context["size"] = results
+    # if size * page + size < results:
+    #     context["next"] = "/api/v1/add/?size={}&page={}".format(size, next_page)
+    # else:
+    #     context["next"] = ""
+    
+    # context["size"] = size
     # context["results"] = results
     return flask.jsonify(**context)
 

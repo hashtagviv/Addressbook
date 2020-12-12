@@ -4,7 +4,7 @@ import Address from './address';
 class Index extends React.Component {
     constructor(props) {
       super(props);
-      this.state = { results: [], url: '', size : 0};
+      this.state = { results: [], url: '', size : 0, next: ''};
       this.fetchData = this.fetchData.bind(this);
       if (performance.type === 2) {
         this.state = history.state;
@@ -23,6 +23,8 @@ class Index extends React.Component {
           this.setState({
             results: data.results,
             size :data.size,
+            next:data.next,
+            hasnext: data.next != '',
           });
         })
         .catch(error => console.log(error)); // eslint-disable-line no-console
@@ -56,7 +58,7 @@ class Index extends React.Component {
                 <tbody>
                     {this.state.results.map(item => (
                     <Address url = {item.url} size = {this.state.size} addressid= {item.addressid}/>
-                ))}
+                  ))}
                 </tbody>
             </table>
         </div>

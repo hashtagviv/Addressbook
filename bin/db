@@ -31,7 +31,7 @@ case $1 in
     rm -rf var/addressbook.sqlite3 var/uploads
     mkdir -p var/uploads
     sqlite3 var/addressbook.sqlite3 < sql/schema.sql
-    sqlite3 var/addressbook.sqlite3 < sql/data.sql
+    sqlite3 var/addressbook.sqlite3 < sql/dump.sql
     ;;
 "dump")
     sqlite3 -batch -line var/addressbook.sqlite3 'SELECT * FROM addresses'

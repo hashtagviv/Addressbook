@@ -20,9 +20,10 @@ def add_address(lastname, firstname, company, email, category):
 
 @addressbook.app.route('/', methods=['GET', 'POST'])
 def show_index():
-    query = "select * from addresses"
+    query = "select firstname, lastname, Company, Email, Category from addresses limit 100"
     addresses = get_db().cursor().execute(query)
-    context = {'addresses': addresses}
+    context = {}
+    context["addresses"] = addresses
     return flask.render_template('index.html', **context)
 
 @addressbook.app.route('/address/new', methods=['GET', 'POST'])
@@ -60,6 +61,7 @@ def show_new_address():
 def show_address(address_id):
     if flask.request.method == 'POST':
         if 'submitchanges' in flask.request.form:
+            cur = get_db().cursor()
             query = "update addresses set lastname = \'" + flask.request.form['lastname'] + '\','
             query += "firstname = \'" + flask.request.form['firstname'] + "\',"
             query += "firstname = \'" + flask.request.form['firstname'] + "\',"
@@ -67,21 +69,21 @@ def show_address(address_id):
             query += "Company = \'" + flask.request.form['company'] + "\',"
             query += "email = \'" + flask.request.form['email'] + "\' "
             query += "where addressid = " + str(address_id)
-            get_db().cursor().execute(query)
+            cur.execute(query)
             query = "update contactinfo set "
             query += "workphone = \'" + flask.request.form['workphone'] + "\',"
             query += "homephone = \'" + flask.request.form['homephone'] + "\',"
             query += "mobile = \'" + flask.request.form['mobile'] + "\',"
             query += "urllink = \'" + flask.request.form['urllink'] + "\' "
             query += "where addressid = " + str(address_id)
-            get_db().cursor().execute(query)
+            cur.execute(query)
             query = "update addressinfo set address_ = \'" + flask.request.form['address'] + '\','
             query += "city = \'" + flask.request.form['city'] + "\',"
             query += "country = \'" + flask.request.form['country'] + "\',"
             query += "state_ = \'" + flask.request.form['state'] + "\',"
             query += "zip = \'" + flask.request.form['zip'] + "\' "
             query += "where addressid = " + str(address_id)
-            get_db().cursor().execute(query)
+            cur.execute(query)
         elif 'delete' in flask.request.form:
             con = get_db()
             cur = con.cursor()
