@@ -38,6 +38,7 @@ def show_new_address():
         query += flask.request.form['company'] + "\',\'"
         query += flask.request.form['email'] + "\')"
         addressid = cur.execute(query).lastrowid
+        print(addressid)
         query = "insert into contactinfo(addressid, workphone, homephone, mobile, urllink) values(\'"
         query += str(addressid) + "\',\'"
         query += flask.request.form['workphone'] + "\',\'"
